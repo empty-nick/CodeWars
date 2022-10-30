@@ -1,12 +1,12 @@
-// Task №1
+// Task №1. Rang 7
 // Array of String To Array of Numbers
-console.log(`Task 1. Array of String To Array of Numbers`);
+console.log(`\nTask 1. Array of String To Array of Numbers. Rang 7`);
 const toNumberArray = (stringarray) => stringarray.map((i) => +i);
 
 console.log(toNumberArray(["1.1", "2.2", "3.3"]));
 
 // -----------------------------------------------------------------
-// Task №2
+// Task №2. Rang 6
 // Plus array
 console.log(``);
 console.log(`Task 2. Plus array. Rang 6`);
@@ -56,7 +56,7 @@ console.log(upArray([1, -9]));
 console.log(upArray([1, 10]));
 
 // -----------------------------------------------------------------
-// Task №3
+// Task №3. Rang 7
 // Sum even numbers
 console.log(``);
 console.log(`Task 3. Sum even numbers. Rang 7`);
@@ -91,7 +91,7 @@ console.log(`Task 5. Squares sequence. Rang 7`);
 
 function squares(x, n) {
   let XXX = [x];
-  if (n == 0 || n < 0) return []
+  if (n == 0 || n < 0) return [];
   for (let i = 0; i < n - 1; i++) {
     XXX.push(XXX[i] ** 2);
   }
@@ -100,17 +100,66 @@ function squares(x, n) {
 console.log(squares(2, 5), [2, 4, 16, 256, 65536]);
 console.log(squares(3, 3), [3, 9, 81]);
 console.log(squares(5, 3), [5, 25, 625]);
-console.log(squares(2,0), []);
+console.log(squares(2, 0), []);
 // -----------------------------------------------------------------
 // Task №6. Rang 8
 // You Can't Code Under Pressure #1
 console.log(``);
 console.log(`Task 6. You Can't Code Under Pressure #1. Rang 8`);
 
-const doubleInteger = (i) =>  i*2;
-console.log(doubleInteger(8), 8);
+const doubleInteger = (i) => i * 2;
+console.log(doubleInteger(2), 4);
 // -----------------------------------------------------------------
-// Task №7. Rang XXX
-// **NAME**
+// Task №7. Rang 6
+// Find the missing term in an Arithmetic Progression
 console.log(``);
-console.log(`Task 7. **NAME**. Rang XXX`);
+console.log(
+  `Task 7. Find the missing term in an Arithmetic Progression. Rang 6`
+);
+
+var findMissing = function (list) {
+  return (
+    ((list[0] + list[list.length - 1]) / 2) * (list.length + 1) -
+    list.reduce((acc, num) => acc + num, 0)
+  );
+};
+
+console.log(findMissing([1, 3, 4]), 2);
+// -----------------------------------------------------------------
+// Task №8. Rang 5
+// Challenge Fun #14: Target Game
+console.log(``);
+console.log(`Task 8. Challenge Fun #14: Target Game. Rang 5`);
+
+function targetGame(vals) {
+  var maxHere, maxLast;
+  maxHere = maxLast = 0;
+  for (var value, i = 0, len = vals.length; i < len; i += 1) {
+    [maxLast, maxHere] = [maxHere, Math.max(maxHere, maxLast + vals[i])];
+  }
+  return Math.max(maxHere, maxLast);
+}
+
+console.log(targetGame([1, 2, 3, 4]),6);
+console.log(targetGame([36, 42, 93, 29, 0, 33, 15, 84, 14, 24, 81, 11]),327);
+console.log(targetGame([26, 54, 36, 35, 63, 58, 31, 80, 59, 61, 34, 54, 62, 73, 89, 7, 98, 91, 78]),615);
+// -----------------------------------------------------------------
+// Task №9. Rang 6
+// Tortoise racing
+console.log(``);
+console.log(`Task 8. Tortoise racing. Rang 6`);
+
+function race(v1, v2, g) {
+  if (v1 >= v2) {
+      return null
+  }
+  return arr = [
+      Math.floor(g / (v2 - v1)),
+      Math.floor(g / (v2 - v1) * 60 - Math.floor(g / (v2 - v1)) * 60),
+      Math.floor(g / (v2 - v1) * 3600 - (Math.floor(g / (v2 - v1)) * 3600) - (Math.floor(g / (v2 - v1) * 60 - Math.floor(g / (v2 - v1)) * 60)*60))]
+}
+
+console.log(race(720, 850, 70), [0, 32, 18]);
+console.log(race(80, 91, 37), [3, 21, 49]);
+console.log(race(80, 100, 40), [2, 0, 0]);
+console.log(race(720, 850, 37), [0, 17, 4])
