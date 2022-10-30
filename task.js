@@ -134,7 +134,7 @@ console.log(`Task 8. Challenge Fun #14: Target Game. Rang 5`);
 function targetGame(vals) {
   var maxHere, maxLast;
   maxHere = maxLast = 0;
-  for (var value, i = 0, len = vals.length; i < len; i += 1) {
+  for (var i = 0, len = vals.length; i < len; i += 1) {
     [maxLast, maxHere] = [maxHere, Math.max(maxHere, maxLast + vals[i])];
   }
   return Math.max(maxHere, maxLast);
