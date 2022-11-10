@@ -3,7 +3,7 @@
 console.log(`\nTask 1. Array of String To Array of Numbers. Rang 7`);
 const toNumberArray = (stringarray) => stringarray.map((i) => +i);
 
-console.log(toNumberArray(["1.1", "2.2", "3.3"]));
+console.log(toNumberArray(['1.1', '2.2', '3.3']));
 
 // -----------------------------------------------------------------
 // Task №2. Rang 6
@@ -79,9 +79,9 @@ function sumStrings(a, b) {
   return (BigInt(a) + BigInt(b)).toString();
 }
 
-console.log(sumStrings("351", "453"));
+console.log(sumStrings('351', '453'));
 console.log(
-  sumStrings("712569312664357328695151392", "8100824045303269669937")
+  sumStrings('712569312664357328695151392', '8100824045303269669937')
 );
 // -----------------------------------------------------------------
 // Task №5. Rang 7
@@ -140,26 +140,65 @@ function targetGame(vals) {
   return Math.max(maxHere, maxLast);
 }
 
-console.log(targetGame([1, 2, 3, 4]),6);
-console.log(targetGame([36, 42, 93, 29, 0, 33, 15, 84, 14, 24, 81, 11]),327);
-console.log(targetGame([26, 54, 36, 35, 63, 58, 31, 80, 59, 61, 34, 54, 62, 73, 89, 7, 98, 91, 78]),615);
+console.log(targetGame([1, 2, 3, 4]), 6);
+console.log(targetGame([36, 42, 93, 29, 0, 33, 15, 84, 14, 24, 81, 11]), 327);
+console.log(
+  targetGame([
+    26, 54, 36, 35, 63, 58, 31, 80, 59, 61, 34, 54, 62, 73, 89, 7, 98, 91, 78,
+  ]),
+  615
+);
 // -----------------------------------------------------------------
 // Task №9. Rang 6
 // Tortoise racing
 console.log(``);
-console.log(`Task 8. Tortoise racing. Rang 6`);
+console.log(`Task 9. Tortoise racing. Rang 6`);
 
 function race(v1, v2, g) {
   if (v1 >= v2) {
-      return null
+    return null;
   }
-  return arr = [
-      Math.floor(g / (v2 - v1)),
-      Math.floor(g / (v2 - v1) * 60 - Math.floor(g / (v2 - v1)) * 60),
-      Math.floor(g / (v2 - v1) * 3600 - (Math.floor(g / (v2 - v1)) * 3600) - (Math.floor(g / (v2 - v1) * 60 - Math.floor(g / (v2 - v1)) * 60)*60))]
+  return (arr = [
+    Math.floor(g / (v2 - v1)),
+    Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60),
+    Math.floor(
+      (g / (v2 - v1)) * 3600 -
+        Math.floor(g / (v2 - v1)) * 3600 -
+        Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60) * 60
+    ),
+  ]);
 }
 
 console.log(race(720, 850, 70), [0, 32, 18]);
 console.log(race(80, 91, 37), [3, 21, 49]);
 console.log(race(80, 100, 40), [2, 0, 0]);
-console.log(race(720, 850, 37), [0, 17, 4])
+console.log(race(720, 850, 37), [0, 17, 4]);
+// -----------------------------------------------------------------
+// Task №10. Rang 4
+// Tortoise racing
+console.log(``);
+console.log(`Task 10. Next bigger number with the same digits. Rang 4`);
+
+function nextBigger(n) {
+  const numArr = Array.from(String(n), Number), nums = [];
+  if (numArr.length == 1 || numArr.every((element) => numArr[0] == element))
+    return null;
+
+  for (let index = 0; index <= numArr.length; index++) {
+    const state = n + (3 * index)
+
+    if(Array.from(String(state), Number).includes(numArr[0])) return 'hi'
+
+  }
+  
+
+  return +numArr.join('');
+}
+
+console.log(nextBigger(12), 21);
+console.log(nextBigger(513), 531);
+console.log(nextBigger(2017), 2071);
+console.log(nextBigger(414), 441);
+console.log(nextBigger(144), 414);
+console.log(nextBigger(9), null);
+console.log(nextBigger(111), null);
