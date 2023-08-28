@@ -18,7 +18,7 @@ function upArray(arr) {
     arr.some((elem) => {
       if (elem < 0) return true;
     }) ||
-    arr.length == 0 ||
+    arr.length === 0 ||
     arr.some((elem) => {
       if (elem % 1 !== 0) return true;
     })
@@ -28,13 +28,13 @@ function upArray(arr) {
   arr[arr.length - 1] += 1;
 
   function recalcArr(array, index) {
-    if (index == -1) return array;
-    if (index == 0 && array[0] == 10) {
+    if (index === -1) return array;
+    if (index === 0 && array[0] === 10) {
       array[0] = 0;
       return array.unshift(1);
     }
 
-    if (array[index] == 10) {
+    if (array[index] === 10) {
       array[index] = 0;
       array[index - 1] += 1;
     }
@@ -63,7 +63,7 @@ console.log(`Task 3. Sum even numbers. Rang 7`);
 function sumEvenNumbers(input) {
   let newArr = [];
   input.map((i) => {
-    if (i % 2 == 0) newArr.push(i);
+    if (i % 2 === 0) newArr.push(i);
   });
   return newArr.reduce((acc, num) => acc + num, 0);
 }
@@ -91,7 +91,7 @@ console.log(`Task 5. Squares sequence. Rang 7`);
 
 function squares(x, n) {
   let XXX = [x];
-  if (n == 0 || n < 0) return [];
+  if (n === 0 || n < 0) return [];
   for (let i = 0; i < n - 1; i++) {
     XXX.push(XXX[i] ** 2);
   }
@@ -117,7 +117,7 @@ console.log(
   `Task 7. Find the missing term in an Arithmetic Progression. Rang 6`
 );
 
-var findMissing = function (list) {
+const findMissing = function (list) {
   return (
     ((list[0] + list[list.length - 1]) / 2) * (list.length + 1) -
     list.reduce((acc, num) => acc + num, 0)
@@ -132,9 +132,9 @@ console.log(``);
 console.log(`Task 8. Challenge Fun #14: Target Game. Rang 5`);
 
 function targetGame(vals) {
-  var maxHere, maxLast;
+  let maxHere, maxLast;
   maxHere = maxLast = 0;
-  for (var i = 0, len = vals.length; i < len; i += 1) {
+  for (let i = 0, len = vals.length; i < len; i += 1) {
     [maxLast, maxHere] = [maxHere, Math.max(maxHere, maxLast + vals[i])];
   }
   return Math.max(maxHere, maxLast);
@@ -208,7 +208,7 @@ console.log(nextBigger(111), null);
 console.log(``);
 console.log(`Task 11. Permutations. Rang 4`);
 function permutations(string) {
-  if ([...string].length == 1) return [...string];
+  if ([...string].length === 1) return [...string];
 
   let arr = [string], a = []
 
