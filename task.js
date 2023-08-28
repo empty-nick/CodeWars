@@ -186,12 +186,8 @@ function nextBigger(n) {
 
   for (let index = 0; index <= numArr.length; index++) {
     const state = n + (3 * index)
-
     if(Array.from(String(state), Number).includes(numArr[0])) return 'hi'
-
   }
-  
-
   return +numArr.join('');
 }
 
@@ -264,3 +260,40 @@ console.log(problem(1), 56)
 console.log(problem(5), 256)
 console.log(problem(0), 6)
 console.log(problem(1.2), 66)
+
+// -----------------------------------------------------------------
+// Task №15. Rang 8
+// Adding Big Numbers
+console.log(``);
+console.log(`Task №15. Adding Big Numbers. Rang 4`);
+function add(a, b) {
+  if (a + b < Number.MAX_SAFE_INTEGER)
+    return Number(a) + Number(b) + ''
+
+  let maxLength = Math.max(a.length, b.length);
+  a = a.padStart(maxLength, '0');
+  b = b.padStart(maxLength, '0');
+
+  let result = '';
+  let carry = 0;
+
+  for (let i = maxLength - 1; i >= 0; i--) {
+    const sum = parseInt(a[i]) + parseInt(b[i]) + carry;
+    carry = Math.floor(sum / 10);
+    result = (sum % 10) + result;
+  }
+
+  if (carry) {
+    result = carry + result;
+  }
+
+  return result;
+}
+
+console.log(add("1", "1"), "2");
+console.log(add("123", "456"), "579");
+console.log(add("888", "222"), "1110");
+console.log(add("1372", "69"), "1441");
+console.log(add("12", "456"), "468");
+console.log(add("101", "100"), "201");
+console.log(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
