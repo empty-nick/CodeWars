@@ -181,7 +181,7 @@ console.log(`Task 10. Next bigger number with the same digits. Rang 4`);
 
 function nextBigger(n) {
   const numArr = Array.from(String(n), Number), nums = [];
-  if (numArr.length == 1 || numArr.every((element) => numArr[0] == element))
+  if (numArr.length === 1 || numArr.every((element) => numArr[0] === element))
     return null;
 
   for (let index = 0; index <= numArr.length; index++) {
@@ -202,3 +202,65 @@ console.log(nextBigger(414), 441);
 console.log(nextBigger(144), 414);
 console.log(nextBigger(9), null);
 console.log(nextBigger(111), null);
+// -----------------------------------------------------------------
+// Task №11. Rang 4
+// Tortoise racing
+console.log(``);
+console.log(`Task 11. Permutations. Rang 4`);
+function permutations(string) {
+  if ([...string].length == 1) return [...string];
+
+  let arr = [string], a = []
+
+  arr.forEach( element => a.push(element))
+  
+  return a
+}
+
+console.log(permutations('a'), ['a']);
+console.log(permutations('ab'), ['ab', 'ba']);
+
+// -----------------------------------------------------------------
+// Task №12. Rang 7
+// Tortoise racing
+console.log(``);
+console.log(`Task 12. Fix My Phone Numbers! Rang 7`);
+function isItANum(str) {
+  let filteredStr = [...str].filter( elem => Number.isInteger(+elem)).join('').trim().replace(/\s/g, '')
+  return filteredStr.startsWith('0') && filteredStr.length === 11 ? filteredStr : `Not a phone number`
+}
+
+console.log(isItANum("S:)0207ERGQREG88349F82!efRF)"), "02078834982");
+console.log(isItANum("sjfniebienvr12312312312ehfWh"), "Not a phone number");
+console.log(isItANum("0192387415456"), "Not a phone number");
+console.log(isItANum("v   uf  f 0tt2eg qe0b 8rtyq4eyq564()(((((165"), "02084564165");
+console.log(isItANum("stop calling me no I have never been in an accident"), "Not a phone number")
+
+// -----------------------------------------------------------------
+// Task №13. Rang 5
+// Convert PascalCase string into snake_case
+console.log(``);
+console.log(`Task №13. Convert PascalCase string into snake_case. Rang 5`);
+function toUnderscore(string) {
+  return (string + '').replace(/[A-Z]/gm, previous => `_${previous.toLowerCase()}`).replace(/^_/gm, '')
+}
+
+console.log(toUnderscore("TestController") + ' //test_controller')
+console.log(toUnderscore("MoviesAndBooks") + ' //movies_and_books')
+console.log(toUnderscore("App7Test") + ' //app7_test')
+console.log(toUnderscore(1) + ' //1')
+
+// -----------------------------------------------------------------
+// Task №14. Rang 8
+// Super Duper Easy
+console.log(``);
+console.log(`Task №14. Super Duper Easy. Rang 8`);
+function problem(x){
+  return typeof x === 'number' ? x * 50 + 6 : `Error`
+}
+
+console.log(problem("hello"), "Error")
+console.log(problem(1), 56)
+console.log(problem(5), 256)
+console.log(problem(0), 6)
+console.log(problem(1.2), 66)
