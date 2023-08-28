@@ -1,0 +1,20 @@
+{
+  "name": "1codewars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "task.js",
+  "scripts": {
+    "start": "node task.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empty-nick/CodeWars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/empty-nick/CodeWars/issues"
+  },
+  "homepage": "https://github.com/empty-nick/CodeWars#readme"
+}
