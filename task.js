@@ -297,3 +297,25 @@ console.log(add("1372", "69"), "1441");
 console.log(add("12", "456"), "468");
 console.log(add("101", "100"), "201");
 console.log(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
+
+// -----------------------------------------------------------------
+// Task №16. Rang 8
+// Find Multiples of a Number
+console.log(``);
+console.log(`Task №16. Find Multiples of a Number. Rang 8`);
+function findMultiples(integer, limit) {
+  if (limit === 0)
+    return [0]
+
+  let arr = []
+  for (let i = integer; i <= limit; i+=integer) {
+    arr.push(i)
+  }
+  return arr
+}
+
+console.log(findMultiples(5, 25), [5, 10, 15, 20, 25])
+console.log(findMultiples(1, 2), [1, 2])
+console.log(findMultiples(5, 7), [5])
+console.log(findMultiples(4, 27), [4, 8, 12, 16, 20, 24])
+console.log(findMultiples(11, 54), [11, 22, 33, 44])
