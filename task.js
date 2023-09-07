@@ -180,7 +180,7 @@ console.log(``);
 console.log(`Task 10. Next bigger number with the same digits. Rang 4`);
 
 function nextBigger(n) {
-  const numArr = Array.from(String(n), Number), nums = [];
+  const numArr = Array.from(String(n), Number);
   if (numArr.length === 1 || numArr.every((element) => numArr[0] === element))
     return null;
 
