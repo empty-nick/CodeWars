@@ -158,7 +158,7 @@ function race(v1, v2, g) {
   if (v1 >= v2) {
     return null;
   }
-  return (arr = [
+  return [
     Math.floor(g / (v2 - v1)),
     Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60),
     Math.floor(
@@ -166,7 +166,7 @@ function race(v1, v2, g) {
         Math.floor(g / (v2 - v1)) * 3600 -
         Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60) * 60
     ),
-  ]);
+  ];
 }
 
 console.log(race(720, 850, 70), [0, 32, 18]);
@@ -319,3 +319,15 @@ console.log(findMultiples(1, 2), [1, 2])
 console.log(findMultiples(5, 7), [5])
 console.log(findMultiples(4, 27), [4, 8, 12, 16, 20, 24])
 console.log(findMultiples(11, 54), [11, 22, 33, 44])
+
+// -----------------------------------------------------------------
+// Task №17. Rang 8
+// Find Multiples of a Number
+console.log(``);
+console.log(`Task №17. Grasshopper - If/else syntax debug. Rang 8`);
+function checkAlive (health) {
+  return health > 0;
+}
+
+console.log(checkAlive(5), true)
+console.log(checkAlive(0), false)
