@@ -5,7 +5,8 @@
   "main": "task.js",
   "scripts": {
     "start": "node task.js",
-    "start:deno": "deno run task.js"
+    "start:deno": "deno run task.js",
+    "startJS:deno": "deno run TypeTask.ts"
   },
   "repository": {
     "type": "git",
