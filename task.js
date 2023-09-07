@@ -158,7 +158,7 @@ function race(v1, v2, g) {
   if (v1 >= v2) {
     return null;
   }
-  return (arr = [
+  return [
     Math.floor(g / (v2 - v1)),
     Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60),
     Math.floor(
@@ -166,7 +166,7 @@ function race(v1, v2, g) {
         Math.floor(g / (v2 - v1)) * 3600 -
         Math.floor((g / (v2 - v1)) * 60 - Math.floor(g / (v2 - v1)) * 60) * 60
     ),
-  ]);
+  ];
 }
 
 console.log(race(720, 850, 70), [0, 32, 18]);
