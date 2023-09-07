@@ -350,3 +350,20 @@ function twoSort(s) {
 
 console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]), 'b***i***t***c***o***i***n' );
 console.log(twoSort(["turns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"]), 'a***r***e')
+
+// -----------------------------------------------------------------
+// Task №21. Rang 7
+// Area of a Circle
+console.log(``);
+console.log(`Task №21. Area of a Circle. Rang 7`);
+const circleArea = function(radius) {
+  if (typeof radius !== "number" || radius <= 0)
+    return false
+  return +(radius**2*Math.PI).toFixed(2)
+};
+
+console.log(circleArea(-1485.86), false)
+console.log(circleArea(0), false)
+console.log(circleArea(43.2673), 5881.25)
+console.log(circleArea(68), 14526.72)
+console.log(circleArea("number"), false)
