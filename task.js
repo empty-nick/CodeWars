@@ -322,7 +322,7 @@ console.log(findMultiples(11, 54), [11, 22, 33, 44])
 
 // -----------------------------------------------------------------
 // Task №17. Rang 8
-// Find Multiples of a Number
+// Grasshopper - If/else syntax debug
 console.log(``);
 console.log(`Task №17. Grasshopper - If/else syntax debug. Rang 8`);
 function checkAlive (health) {
@@ -331,3 +331,22 @@ function checkAlive (health) {
 
 console.log(checkAlive(5), true)
 console.log(checkAlive(0), false)
+
+// -----------------------------------------------------------------
+// Task №18. Rang 8
+// Sort and Star
+console.log(``);
+console.log(`Task №18. Sort and Star. Rang 8`);
+function twoSort(s) {
+  let word = ''
+  s.sort()[0].replace(/\w/gm, (letter) => {
+    if (s.sort()[0].at(-1) !== letter)
+      word += `${letter}***`
+    else
+      word += letter
+  })
+  return word
+}
+
+console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]), 'b***i***t***c***o***i***n' );
+console.log(twoSort(["turns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"]), 'a***r***e')
