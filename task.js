@@ -367,3 +367,95 @@ console.log(circleArea(0), false)
 console.log(circleArea(43.2673), 5881.25)
 console.log(circleArea(68), 14526.72)
 console.log(circleArea("number"), false)
+
+// -----------------------------------------------------------------
+// Task №22. Rang 7
+// Convert Hash To An Array
+console.log(``);
+console.log(`Task №22. Convert Hash To An Array. Rang 7`);
+const convertHashToArray = hash => Object.entries(hash).sort((a, b) => a[0] - b[1])
+
+console.log(convertHashToArray({name: "Jeremy"}),[["name", "Jeremy"]]);
+console.log(convertHashToArray({name: "Jeremy", age: 24}).sort(),[["age", 24], ["name", "Jeremy"]]);
+console.log(convertHashToArray({name: "Jeremy", age: 24, role: "Software Engineer"}).sort(),[["age", 24], ["name", "Jeremy"], ["role", "Software Engineer"]]);
+console.log(convertHashToArray({product: "CodeWars", powerLevelOver: 9000}).sort(),[["powerLevelOver", 9000], ["product", "CodeWars"]]);
+console.log(convertHashToArray({}),[]);
+
+// -----------------------------------------------------------------
+// Task №23. Rang 4
+// Strip Comments
+console.log(``);
+console.log(`Task №23. Strip Comments. Rang 4`);
+function solution(input, markers) {
+  return input.split('\n').map(line => {
+    let minIndex = line.length;
+    markers.forEach(marker => {
+      let index = line.indexOf(marker);
+      if (index !== -1 && index < minIndex) {
+        minIndex = index;
+      }
+    });
+    return line.substring(0, minIndex).trimEnd();
+  }).join('\n');
+}
+
+const tests = [
+  ['aa bb cc', [], 'aa bb cc'],
+  ['aa bb cc  ', [], 'aa bb cc'],
+  ['  aa bb cc', [], '  aa bb cc'],
+  ['  aa # bb # cc  ', [], '  aa # bb # cc'],
+
+  ['aa bb cc', ['#'], 'aa bb cc'],
+  ['aa bb # cc', ['#'], 'aa bb'],
+  ['aa# bb cc', ['#'], 'aa'],
+  ['aa #bb cc', ['#'], 'aa'],
+  ['aa # bb # cc', ['#'], 'aa'],
+  ['#aa bb cc', ['#'], ''],
+
+  ['#aa bb\ncc dd', ['#'], '\ncc dd'],
+  ['aa # bb\ncc dd', ['#'], 'aa\ncc dd'],
+  ['aa bb\n#cc dd', ['#'], 'aa bb\n'],
+  ['aa bb\ncc # dd', ['#'], 'aa bb\ncc'],
+  ['aa bb\ncc dd#', ['#'], 'aa bb\ncc dd'],
+
+  ['aa bb\ncc dd', ['#', '!'], 'aa bb\ncc dd'],
+  ['aa # bb\ncc dd', ['#', '!'], 'aa\ncc dd'],
+  ['aa bb\ncc ! dd', ['#', '!'], 'aa bb\ncc'],
+  ['#aa bb\n!cc dd', ['#', '!'], '\n'],
+  ['aa ! bb\ncc # dd', ['#', '!'], 'aa\ncc'],
+  ['aa bb#\ncc dd!', ['#', '!'], 'aa bb\ncc dd'],
+
+  ['aa + bb\ncc - dd\nee * ff', ['+', '-', '*'], 'aa\ncc\nee'],
+  ['aa / bb\ncc ^ dd\nee $ ff', ['/', '^', '$'], 'aa\ncc\nee'],
+];
+
+tests.forEach(test => {
+  const [text, markers, expected] = test;
+  console.log(solution(text, markers),'|-> res: ' + expected);
+})
+
+// -----------------------------------------------------------------
+// Task №24. Rang 7
+// Working with arrays I (and why your code fails in some katas)
+console.log(``);
+console.log(`Task №24. Working with arrays I (and why your code fails in some katas). Rang 7`);
+
+const withoutLast = (arr) => arr.slice(0, -1);
+
+console.log(withoutLast([1, 2, 3, 4, 5]), [1, 2, 3, 4]);
+console.log(withoutLast([6, 7, 8, 9]), [6, 7, 8]);
+
+// -----------------------------------------------------------------
+// Task №25. Rang 7
+// Isograms
+console.log(``);
+console.log(`Task №25. Isograms. Rang 7`);
+
+const isIsogram = (str) => str.split('').every((value, _index, array) => array.filter(elem => elem.toLowerCase() === value.toLowerCase()).length === 1);
+
+console.log(isIsogram("Dermatoglyphics"), true );
+console.log(isIsogram("isogram"), true );
+console.log(isIsogram("aba"), false, "same chars may not be adjacent" );
+console.log(isIsogram("moOse"), false, "same chars may not be same case" );
+console.log(isIsogram("isIsogram"), false );
+console.log(isIsogram(""), true, "an empty string is a valid isogram" )
