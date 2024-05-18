@@ -459,3 +459,37 @@ console.log(isIsogram("aba"), false, "same chars may not be adjacent" );
 console.log(isIsogram("moOse"), false, "same chars may not be same case" );
 console.log(isIsogram("isIsogram"), false );
 console.log(isIsogram(""), true, "an empty string is a valid isogram" )
+
+// -----------------------------------------------------------------
+// Task №26. Rang 8
+// Powers of 2
+console.log(``);
+console.log(`Task №26. Powers of 2. Rang 8`);
+
+const powersOfTwo = n => {
+  const res = []
+  for (let i = 0; i <= n; i++) {
+    res.push(2**i)
+  }
+  return res
+}
+
+console.log(powersOfTwo(0), [1])
+console.log(powersOfTwo(1), [1, 2])
+console.log(powersOfTwo(4), [1, 2, 4, 8, 16])
+
+// -----------------------------------------------------------------
+// Task №27. Rang 7
+// Even numbers in an array
+console.log(``);
+console.log(`Task №27. Even numbers in an array. Rang 7`);
+
+function evenNumbers(array, number) {
+  const arr = array.filter(num => num%2 === 0)
+  arr.splice(0, arr.length - number);
+  return arr;
+}
+
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3), [4, 6, 8]);
+console.log(evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2), [-8, 26]);
+console.log(evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1), [6])
